@@ -39,6 +39,7 @@ class NavBarBotones extends StatelessWidget {
             GButton(
               icon: Icons.add_a_photo_outlined,
               text: 'Analizar',
+              
             ),
         ],
         ),

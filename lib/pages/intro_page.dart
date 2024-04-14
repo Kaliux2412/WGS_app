@@ -39,7 +39,8 @@ class IntroPage extends StatelessWidget {
                 'WATER GROWTH SOLUTIONS',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 26,
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 51, 86, 14)
                 ),
               ),
               const SizedBox(height: 24,),
