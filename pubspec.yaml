@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_nav_bar: ^5.0.6
   curved_navigation_bar: ^1.0.3
+  
+  provider:
+  dash_chat_2: ^0.0.20
+  chat_gpt_sdk: ^3.0.4
 
 dev_dependencies:
   flutter_test:

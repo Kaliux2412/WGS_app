@@ -5,11 +5,24 @@ class Plantas {
   final String imagen;
   final String descripcion;
 
-  Plantas({
-    required this.name,
-    required this.cuidado,
-    required this.imagen,
-    required this.descripcion,
-  });
-// ignore: empty_constructor_bodies
+  Plantas({required this.name, required this.cuidado, required this.imagen, required this.descripcion});
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Plantas &&
+      other.name == name &&
+      other.cuidado == cuidado &&
+      other.imagen == imagen &&
+      other.descripcion == descripcion;
+  }
+
+  @override
+  int get hashCode {
+    return name.hashCode ^
+           cuidado.hashCode ^
+           imagen.hashCode ^
+           descripcion.hashCode;
+  }
 }

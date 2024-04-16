@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/componentes/ChatWGS.dart';
 import 'package:flutter_application_1/componentes/botones.dart';
 // import 'package:flutter_application_1/componentes/imginicio.dart';
 // import 'package:flutter_application_1/componentes/sliver.dart';

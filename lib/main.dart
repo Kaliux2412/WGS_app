@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/componentes/modelos/tipos.dart';
 import 'pages/intro_page.dart';
+import 'pages/Inicio.dart';
+import 'package:provider/provider.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -8,9 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+    return ChangeNotifierProvider(
+      create: (context) => Tipos(), builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: IntroPage(),
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/componentes/modelos/plantas.dart';
@@ -5,7 +6,8 @@ import 'package:flutter_application_1/componentes/modelos/plantas.dart';
 // ignore: must_be_immutable
 class Products extends StatelessWidget {
     Plantas plantas;
-    Products({super.key, required this.plantas});
+    void Function()? onTap;
+    Products({super.key, required this.plantas, required this.onTap});
   
     @override
     Widget build(BuildContext context) {
@@ -21,15 +23,20 @@ class Products extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(plantas.imagen)
+              child: SizedBox(
+                height: 220,
+                width: 300,
+                child: Image.asset(plantas.imagen, fit: BoxFit.cover,),
+              )
+              
             ),
 
             Padding(
-              padding: const EdgeInsets.only(top: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Text(
                 plantas.cuidado,
                 style: const TextStyle(
-                  fontSize: 10,
+                  fontSize: 14,
                   color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
@@ -55,13 +62,16 @@ class Products extends StatelessWidget {
                       Text(plantas.descripcion, style: const TextStyle(color: Colors.grey))
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 61, 145, 64),
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(12), bottomRight: Radius.circular(12))
+                  GestureDetector(
+                    onTap: onTap ,
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 61, 145, 64),
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(12), bottomRight: Radius.circular(12))
+                      ),
+                      child: const Icon(Icons.info_outline, color: Colors.white,),
                     ),
-                    child: const Icon(Icons.info_outline, color: Colors.white,),
                   )
                 ],
               ),
