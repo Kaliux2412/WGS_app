@@ -87,7 +87,7 @@ class _InicioState extends State<Inicio> {
               ],
             ),
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(height: 6,),
           Expanded(
             child: ListView.builder(
               itemCount: 4,
@@ -103,7 +103,7 @@ class _InicioState extends State<Inicio> {
               
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+            padding: EdgeInsets.only(top: 18.0, left: 20, right: 20),
             child: Divider(
               color: Colors.white,
             ),
