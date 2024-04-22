@@ -13,7 +13,8 @@ class Products extends StatelessWidget {
     Widget build(BuildContext context) {
       return Container(
         margin: EdgeInsets.only(left: 25),
-        width: 280,
+        width: 290,
+        height: 640,
         decoration: BoxDecoration(
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(12)
@@ -24,58 +25,70 @@ class Products extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: SizedBox(
-                height: 220,
-                width: 300,
+                height: 180,
+                width: 290,
                 child: Image.asset(plantas.imagen, fit: BoxFit.cover,),
               )
               
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Text(
-                plantas.cuidado,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Color.fromARGB(255, 0, 0, 0),
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  plantas.cuidado,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        plantas.name,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          plantas.name,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 5,),
-              
-                      Text(plantas.descripcion, style: const TextStyle(color: Colors.grey))
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: onTap ,
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 61, 145, 64),
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(12), bottomRight: Radius.circular(12))
-                      ),
-                      child: const Icon(Icons.info_outline, color: Colors.white,),
+                        const SizedBox(height: 5,),
+                
+                            Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(plantas.descripcion, style: const TextStyle(color: Colors.grey)),
+                              ),
+                            ),
+                        
+                      ],
                     ),
-                  )
-                ],
+                    GestureDetector(
+                      onTap: onTap ,
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 61, 145, 64),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(12), bottomRight: Radius.circular(12))
+                        ),
+                        child: const Icon(Icons.info_outline, color: Colors.white,),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            )
+            
           ],
         ),
       );

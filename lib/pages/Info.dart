@@ -1,58 +1,50 @@
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
-import 'package:dash_chat_2/dash_chat_2.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/componentes/ChatWGS.dart';
-import 'package:flutter_application_1/componentes/const.dart';
-import 'package:flutter_application_1/componentes/modelos/plantas.dart';
-import 'package:provider/provider.dart';
+// import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+// import 'package:dash_chat_2/dash_chat_2.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
+// import 'package:flutter_application_1/componentes/ChatWGS.dart';
+// import 'package:flutter_application_1/componentes/const.dart';
+// import 'package:flutter_application_1/componentes/modelos/plantas.dart';
+// import 'package:provider/provider.dart';
 
-import '../componentes/modelos/tipos.dart';
-import '../componentes/planta_selecta.dart';
+// import '../componentes/modelos/tipos.dart';
+// import '../componentes/planta_selecta.dart';
 
-class InfoPage extends StatefulWidget {
-  const InfoPage({super.key});
+// class InfoPage extends StatefulWidget {
+//   const InfoPage({super.key});
 
-  @override
-  State<InfoPage> createState() => _InfoState();
-}
+//   @override
+//   State<InfoPage> createState() => _InfoState();
+// }
 
-class _InfoState extends State<InfoPage> {
+// class _InfoState extends State<InfoPage> {
 
-  final _Assistant = OpenAI.instance.build(
-    token: OPENAI_API_KEY,
-    baseOption: HttpSetup(
-      receiveTimeout: const Duration(seconds: 5,) 
-    ),
-    enableLog: true,
-  );
+  // final _Assistant = OpenAI.instance.build(
+  //   token: OPENAI_API_KEY,
+  //   baseOption: HttpSetup(
+  //     receiveTimeout: const Duration(seconds: 5,) 
+  //   ),
+  //   enableLog: true,
+  // );
 
-  final ChatUser _currentUser = 
-    ChatUser(id: '1', firstName: 'WGS User');
+  // final ChatUser _currentUser = 
+  //   ChatUser(id: '1', firstName: 'WGS User');
 
-  final ChatUser _ChatUser = 
-    ChatUser(id: '2', firstName: 'WGS Assistant');
+  // final ChatUser _ChatUser = 
+  //   ChatUser(id: '2', firstName: 'WGS Assistant');
 
-  List<ChatMessage> _messages = <ChatMessage>[];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text("Pregunta a WGS Assistant", style: TextStyle(color: Colors.white),),
-      ),
-      body:  DashChat(
-        currentUser: _currentUser,
-        messageOptions: const MessageOptions(
-          currentUserContainerColor: Color.fromARGB(255, 22, 82, 24),
-          textColor: Colors.white,
-        ),
-        onSend: (ChatMessage m){
-        getChatReponse(m);
-      }, messages: _messages),
+  // List<ChatMessage> _messages = <ChatMessage>[];
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     appBar: AppBar(
+  //       backgroundColor: Colors.green,
+  //       title: Text("Pregunta a WGS Assistant", style: TextStyle(color: Colors.white),),
+  //     ),
+  //     body: Column()
       
-    );
+  //   );
     // return  Consumer<Tipos>(builder: (context, value, child)=>
     //   Padding(
     //     padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -89,11 +81,12 @@ class _InfoState extends State<InfoPage> {
     //   )
     // );
     
-  }
-  Future<void> getChatReponse(ChatMessage m) async {
-    setState(() {
-      _messages.insert(0, m);
-    });
+  // }
+  // Future<void> getChatReponse(ChatMessage m) async {
+  //   setState(() {
+  //     _messages.insert(0, m);
+  //   });
     
-  }
-}
+  // }
+// }
+

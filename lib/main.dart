@@ -1,25 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/componentes/firebase_config.dart';
 import 'package:flutter_application_1/componentes/modelos/tipos.dart';
 import 'pages/intro_page.dart';
 import 'pages/Inicio.dart';
 import 'package:provider/provider.dart';
-void main() {
+void main() async{
+  //   WidgetsFlutterBinding.ensureInitialized();
+  // await FirebaseConfig.initialize();
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context){
     return ChangeNotifierProvider(
-      create: (context) => Tipos(), builder: (context, child) => const MaterialApp(
+      create: (context) => Tipos(), builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: IntroPage(),
+        theme: ThemeData(primarySwatch: Colors.green, useMaterial3: true),
+        home: const IntroPage(),
       ),
     );
   }
 }
 
+// import 'dart:io';
+
+// import 'package:awesome_notifications/awesome_notifications.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/pages/CuidaPlanta/PlantaPage.dart';
+
+// void main() {
+//   AwesomeNotifications().initialize('resource://drawable/icon.png',
+//   [
+//     NotificationChannel(
+//       channelKey: 'basic_channel', 
+//       channelName: 'Basic Notifications', 
+//       defaultColor: Colors.teal,
+//       importance: NotificationImportance.High,
+//       channelShowBadge: true,
+//       channelDescription: "di"
+      
+//     )
+//   ]);
+//   runApp(AppWidget());
+// }
+
+// class AppWidget extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primaryColor: Colors.teal,
+//       ),
+//       title: "EL Cuidado en tus Manos",
+//       home: PlantaPage(),
+//     );
+//   }
+// }
 // void main() {
 //   runApp(const MyApp());
 // }

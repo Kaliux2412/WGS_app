@@ -1,1 +1,0 @@
-const OPENAI_API_KEY = "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";

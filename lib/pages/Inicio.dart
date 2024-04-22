@@ -64,39 +64,50 @@ class _InicioState extends State<Inicio> {
               ),
             )
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "Cuidado de tus plantas ☘",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+          // Container(
+          //   child: Expanded(
+
+          //     child: SingleChildScrollView(
+          //         scrollDirection: Axis.vertical,
+
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Cuidado de tus plantas ☘",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      
+                    ],
                   ),
                 ),
-                Text(
-                  'Ver detalles',
-                  style:TextStyle(
-                    fontSize: 12,
-                    color: Colors.green,
-                  ),
-                  ),
-              ],
-            ),
-          ),
+              
+            
+          
           const SizedBox(height: 6,),
           Expanded(
             child: ListView.builder(
               itemCount: 4,
+              shrinkWrap: true,
+              physics:AlwaysScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder:(context, index) {
+              
                 Plantas plantas = value.obtenerinventario()[index];
-                return Products(
-                  plantas: plantas,
-                  onTap: () => addPlantaToInfo(plantas),
+                return Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Products(
+                      plantas: plantas,
+                      onTap: () => addPlantaToInfo(plantas),
+                    ),
+                  ),
                 );
               },
               ),

@@ -6,28 +6,28 @@ class Tipos extends ChangeNotifier{
   List<Plantas> inventario = [
     Plantas(
       name: "Huerto",
-      cuidado: "Ver más a detalle el cuidado del Huerto", 
+      cuidado: "Es de suma importancia el cuidado de los huertos, pues si no se les da mantenimiento pueden afectar el desarrollo de la planta, así que asegurese de limpiarlo, de vez en cuando filtrar el agua, etc.", 
       imagen:'lib/Imgs/huertos.jpg', 
-      descripcion: "Especificaciones del huerto"
+      descripcion: "Ir a pagina web para ver"
       
     ),
     Plantas(
       name: "Fresa",
-      cuidado: "Regar cada 2 días y no echar tanta agua", 
+      cuidado: "Se recomienda planta al final de la primavera, requieren de luz solar (no exesiva), consume nutrientes y no requiere de tanta humedad. Al plantarlas regar diariamente, después de un tiempo, regar de 1-2 veces por semana, con 1.8 L cada riego.", 
       imagen:'lib/Imgs/fresas.jpg', 
       descripcion: "Son delicadas"
     ),
     Plantas(
       name: "Lechuga",
-      cuidado: "Tardan en crecer pero no requieren de tanta agua", 
+      cuidado: "Requiren de una humedad alta (no excesiva), necesitan de luz natural (de 4-5 horas),", 
       imagen:'lib/Imgs/lechuga.jpg', 
-      descripcion: "Requieren más de espacio"
+      descripcion: "Regar cada 3 días con 3 L."
     ),
     Plantas(
       name: "Limón",
-      cuidado: "Regar cada 2 días con abundante agua y ponerle amor y dedicación ya que son sensibles", 
+      cuidado: "Necesitan de mucha luz solar, humadeda ente 18-29°C, nutrir de vez en cuando. ", 
       imagen:'lib/Imgs/limon.jpg', 
-      descripcion: "Requieren de más tierra"
+      descripcion: "Regar cada 3 días con 1.5 L"
     ),
   ];
 

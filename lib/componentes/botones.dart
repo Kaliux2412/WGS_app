@@ -37,8 +37,13 @@ class NavBarBotones extends StatelessWidget {
               text: 'Conectar',
             ),
             GButton(
-              icon: Icons.add_a_photo_outlined,
-              text: 'Analizar',
+              icon: Icons.note_alt_outlined,
+              text: 'Registrar',
+              
+            ),
+            GButton(
+              icon: Icons.account_circle,
+              text: 'Cuenta',
               
             ),
         ],

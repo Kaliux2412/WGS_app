@@ -1,15 +1,18 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/componentes/AreaNotas.dart';
 import 'package:flutter_application_1/componentes/ChatWGS.dart';
 import 'package:flutter_application_1/componentes/botones.dart';
 // import 'package:flutter_application_1/componentes/imginicio.dart';
 // import 'package:flutter_application_1/componentes/sliver.dart';
 import 'package:flutter_application_1/componentes/my_drawer.dart';
 // import 'package:flutter_application_1/componentes/tab_controller.dart';
-import 'package:flutter_application_1/pages/Analizar.dart';
+import 'package:flutter_application_1/pages/CuidaPlanta/Analizar.dart';
 import 'package:flutter_application_1/pages/Inicio.dart';
+import 'package:flutter_application_1/componentes/ChatUser.dart';
 
 import 'Conectar.dart';
-import 'Info.dart';
 
 
 // import '../componentes/botones.dart';
@@ -43,12 +46,13 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
       const Inicio(),
       
-      const InfoPage(),
+      const ChatScreenState(),
 
       const ConectarPage(),
 
+      const NoteHomeUI(),
 
-      const AnalizarPage(),
+      AppWidget(),
   ];
     @override
     Widget build(BuildContext context) {

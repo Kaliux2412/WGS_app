@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 
+import 'dart:io';
+
 class IntroPage extends StatelessWidget {
   const IntroPage ({super.key});
   @override 
