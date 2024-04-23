@@ -1,7 +1,6 @@
 
 import 'dart:async';
 
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -29,11 +28,9 @@ class _ChatScreenStateState extends State<ChatScreenState> {
   void initState(){
     super.initState();
 
-    // chatGPT = OpenAI.instance;
   }
   @override
   void dispose(){
-    // _subscription?.cancel();
     super.dispose();
   }
 
@@ -85,14 +82,6 @@ class _ChatScreenStateState extends State<ChatScreenState> {
                 }
               )
             ),
-            // if(_isTyping) const ThreeDots(),
-            // const Divider(height: 1.0,),
-            // Container(
-            //   decoration: BoxDecoration(
-            //     color: context.cardColor,
-            //   ),
-            //   child: _buildTextComposer(),
-            // )
         ],),
       ),
     );
