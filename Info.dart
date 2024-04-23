@@ -3,13 +3,10 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/componentes/ChatWGS.dart';
-import 'package:flutter_application_1/componentes/const.dart';
 import 'package:flutter_application_1/componentes/modelos/plantas.dart';
 import 'package:provider/provider.dart';
 
-import '../componentes/modelos/tipos.dart';
-import '../componentes/planta_selecta.dart';
+import 'package:flutter_application_1/componentes/modelos/tipos.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({super.key});
@@ -20,13 +17,13 @@ class InfoPage extends StatefulWidget {
 
 class _InfoState extends State<InfoPage> {
 
-  final _Assistant = OpenAI.instance.build(
-    token: OPENAI_API_KEY,
-    baseOption: HttpSetup(
-      receiveTimeout: const Duration(seconds: 5,) 
-    ),
-    enableLog: true,
-  );
+  // final _Assistant = OpenAI.instance.build(
+  //   token: OPENAI_API_KEY,
+  //   baseOption: HttpSetup(
+  //     receiveTimeout: const Duration(seconds: 5,) 
+  //   ),
+  //   enableLog: true,
+  // );
 
   final ChatUser _currentUser = 
     ChatUser(id: '1', firstName: 'WGS User');

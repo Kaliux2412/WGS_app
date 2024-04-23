@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/AreaNotas.dart';
-import 'package:flutter_application_1/componentes/ChatWGS.dart';
 import 'package:flutter_application_1/componentes/botones.dart';
 import 'package:flutter_application_1/componentes/my_drawer.dart';
 import 'package:flutter_application_1/pages/Barra_de_Busqueda.dart';
