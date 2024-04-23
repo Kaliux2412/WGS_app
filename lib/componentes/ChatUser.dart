@@ -21,19 +21,19 @@ class _ChatScreenStateState extends State<ChatScreenState> {
 
   final TextEditingController _controller = TextEditingController();
   final List<ChatMessage> _messages = [];
-  OpenAI? chatGPT;
-  StreamSubscription? _subscription;
+  // OpenAI? chatGPT;
+  // StreamSubscription? _subscription;
   bool _isTyping = false;
 
   @override
   void initState(){
     super.initState();
 
-    chatGPT = OpenAI.instance;
+    // chatGPT = OpenAI.instance;
   }
   @override
   void dispose(){
-    _subscription?.cancel();
+    // _subscription?.cancel();
     super.dispose();
   }
 
