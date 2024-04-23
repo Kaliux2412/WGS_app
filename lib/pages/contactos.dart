@@ -1,3 +1,5 @@
+//Area Para comunicarse con la empresa
+
 import 'package:flutter/material.dart';
 
 class ContactPage extends StatelessWidget {

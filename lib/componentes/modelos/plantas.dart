@@ -1,4 +1,7 @@
 // ignore: file_names
+
+//CONFIGURACIÓN DE LO AUE REQUERIRA CADA TARJETA DE PLANTA
+
 class Plantas {
   final String name;
   final String cuidado;

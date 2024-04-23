@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+//CONFIGURACIÓN DE DISEÑO DE BOTONES DE LA PARTE INFERIOR
+
+
 // ignore: must_be_immutable
 class NavBarBotones extends StatelessWidget {
   void Function(int)? onTabChange ;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/modelos/plantas.dart';
 
+//LIBRERIA O INVENTARIO CON LOS DATOS DE CADA PLANTA, QUE SE USARÁ PARA CREAR LAS TARJETAS
+
 class Tipos extends ChangeNotifier{
   //lista de opciones de plantas visibles
   List<Plantas> inventario = [
@@ -25,9 +27,33 @@ class Tipos extends ChangeNotifier{
     ),
     Plantas(
       name: "Limón",
-      cuidado: "Necesitan de mucha luz solar, humadeda ente 18-29°C, nutrir de vez en cuando. ", 
+      cuidado: "Necesitan de mucha luz solar, humadedad ente 18-29°C, nutrir de vez en cuando. ", 
       imagen:'lib/Imgs/limon.jpg', 
-      descripcion: "Regar cada 3 días con 1.5 L"
+      descripcion: "Regar cada 3 días 1.5 L"
+    ),
+    Plantas(
+      name: "Tomate",
+      cuidado: "Necesitan de bastante luz, pero sobre todo una humedad entre 20-28°C ya que así creceran más jugosos y rojos. ", 
+      imagen:'lib/Imgs/tomate.jpg', 
+      descripcion: "Regar cada 2 días 3L"
+    ),
+    Plantas(
+      name: "Nopal",
+      cuidado: "No requieren de tanto cuidado pués son muy resistentes, puedes tenerlos en tu oficina.", 
+      imagen:'lib/Imgs/nopal.jpg', 
+      descripcion: "Regar cada 4 días."
+    ),
+    Plantas(
+      name: "Naranja",
+      cuidado: "Necesitan de mucha luz solar, humadedad ente 18-29°C, nutrir de vez en cuando. ", 
+      imagen:'lib/Imgs/naranja.jpg', 
+      descripcion: "Regar cada 3 días 1.5 L"
+    ),
+    Plantas(
+      name: "Pimiento Morrón",
+      cuidado: "Crecen muy rápido y no requieren de tanto sol, darles cierta cantidad de nutrientes para que no se marchiten.", 
+      imagen:'lib/Imgs/pimiento.jpg', 
+      descripcion: "Regar cada 2 días 2.5 L"
     ),
   ];
 

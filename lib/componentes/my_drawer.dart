@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 // import '../pages/contactos.dart';
 
+// CONTENIDO DEL DRAWER QUE SE DESPLIEGA EN LA PARTE DE ARRIBA
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
@@ -42,12 +44,6 @@ class MyDrawer extends StatelessWidget {
                 title: Text('W G S', style: TextStyle(color: Color.fromARGB(255, 140, 146, 142),
 )), 
 
-                  // onTap: () {
-                  //   Navigator.pop(context);
-                  //   Navigator.push(context, MaterialPageRoute(builder: (context) => const ContactPage(),
-                  //   ),
-                  //   );
-                  // }
                   
               ),
             ),
@@ -66,8 +62,6 @@ class MyDrawer extends StatelessWidget {
             ),
             const SizedBox(height: 25),
             
-          
-      
           ],
       ),
       ),

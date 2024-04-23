@@ -5,6 +5,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+// SECCIÓN DONDE SE GUARDARAN LOS DATOS QUE USUARIO PONGA EN SUS NOTAS, 
+//ACCEDE A UNA BASE DE DATOS INTERNA LLAMADA SQFLITE
+
+
 class NoteDbHelper {
   static const dbname = 'notes.db';
   static const dvversion = 1;

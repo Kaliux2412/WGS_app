@@ -1,3 +1,5 @@
+//Área principal de la app, esto lleva a la parte de inicio del logo y bienvenida
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/firebase_config.dart';
 import 'package:flutter_application_1/componentes/modelos/tipos.dart';

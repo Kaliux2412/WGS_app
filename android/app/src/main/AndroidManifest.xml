@@ -3,6 +3,17 @@
         android:label="flutter_application_1"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+
+            android:name="com.dieam.awesome_notifications.notification_channel_general"
+
+            android:value="General"/>
+
+        <meta-data
+
+            android:name="com.dieam.awesome_notifications.notification_channel_general_icon"
+
+            android:resource="@mipmap/ic_icon"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -33,7 +44,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <service android:name="me.carda.awesome_notifications.core.services.ForegroundService"
+        <!-- <service android:name="me.carda.awesome_notifications.core.services.ForegroundService"
 
           android:enabled="true"
 
@@ -43,7 +54,7 @@
 
           android:foregroundServiceType="allServiceTypes">
 
-        </service>
+        </service> -->
         <!-- <meta-data
     android:name="com.google.firebase.messaging.default_notification_channel_id"
     android:value="high_importance_channel"/>
@@ -66,9 +77,9 @@
             android:name="firebase_storage_bucket"
             android:value="gs://flutter_application_1.appspot.com" /> -->
     </application>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- <uses-permission android:name="android.permission.VIBRATE"/>
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> -->
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility?hl=en and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.

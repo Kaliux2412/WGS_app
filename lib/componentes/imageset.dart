@@ -5,6 +5,10 @@ import 'package:image_picker/image_picker.dart';
 // import 'firebase_config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
+
+//AQUI SE AGREGARAN LAS IMAGENES TOMADAS POR CÁMARA O GALERÍA A FIREBASE, UNA BASE DE DATOS PARA ALMACENARLAS
+
+
 final FirebaseStorage storage = FirebaseStorage.instance;
 
 class CameraGalleryWidget extends StatefulWidget {

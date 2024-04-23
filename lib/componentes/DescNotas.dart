@@ -10,6 +10,8 @@ class DescriptionNote extends StatefulWidget {
   State<DescriptionNote> createState() => _DescriptionNoteState();
 }
 
+// AREA VISUAL QUE EL USUARIO USAR PARA VER SUS NOTAS
+
 class _DescriptionNoteState extends State<DescriptionNote> {
   @override
   Widget build(BuildContext context) {

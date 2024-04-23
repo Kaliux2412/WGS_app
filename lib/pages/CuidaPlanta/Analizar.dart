@@ -4,8 +4,10 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/CuidaPlanta/PlantaPage.dart';
 
+
+//AREA PARA INICIALIZAR LAS NOTIFICACIONES
 void main() {
-  AwesomeNotifications().initialize('resource://drawable/ic_icon.png',
+  AwesomeNotifications().initialize('resource://drawable/ic_icon',
   [
     NotificationChannel(
       channelKey: 'basic_channel', 

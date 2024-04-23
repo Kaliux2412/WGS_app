@@ -7,8 +7,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
-import 'threedots.dart';
 
+// AREA FALLIDA PARA EL CHAT DE USUARIO
 
 class ChatScreenState extends StatefulWidget {
   const ChatScreenState({super.key});
@@ -114,14 +114,14 @@ class _ChatScreenStateState extends State<ChatScreenState> {
                 }
               )
             ),
-            if(_isTyping) const ThreeDots(),
-            const Divider(height: 1.0,),
-            Container(
-              decoration: BoxDecoration(
-                color: context.cardColor,
-              ),
-              child: _buildTextComposer(),
-            )
+            // if(_isTyping) const ThreeDots(),
+            // const Divider(height: 1.0,),
+            // Container(
+            //   decoration: BoxDecoration(
+            //     color: context.cardColor,
+            //   ),
+            //   child: _buildTextComposer(),
+            // )
         ],),
       ),
     );

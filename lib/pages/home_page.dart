@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/AreaNotas.dart';
 import 'package:flutter_application_1/componentes/ChatWGS.dart';
 import 'package:flutter_application_1/componentes/botones.dart';
-// import 'package:flutter_application_1/componentes/imginicio.dart';
-// import 'package:flutter_application_1/componentes/sliver.dart';
 import 'package:flutter_application_1/componentes/my_drawer.dart';
-// import 'package:flutter_application_1/componentes/tab_controller.dart';
+import 'package:flutter_application_1/pages/Barra_de_Busqueda.dart';
 import 'package:flutter_application_1/pages/CuidaPlanta/Analizar.dart';
 import 'package:flutter_application_1/pages/Inicio.dart';
 import 'package:flutter_application_1/componentes/ChatUser.dart';
@@ -15,8 +13,7 @@ import 'package:flutter_application_1/componentes/ChatUser.dart';
 import 'Conectar.dart';
 
 
-// import '../componentes/botones.dart';
-
+// AREA QUE CONTROLA LA INTERFAZ DE BOTONES DE NAVEGACIÓN DE LA APRTE DE ABAJO, DE LA APP
 class HomePage extends StatefulWidget {
   const HomePage({super. key});
   @override
@@ -31,18 +28,6 @@ class _HomePageState extends State<HomePage> {
       _selectedIndex = index;
     });
   }
-  // late TabController _tabController;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _tabController = TabController(length:4, vsync: this);
-    
-  // }
-  // @override
-  // void dispose(){
-  //   _tabController.dispose();
-  //   super.dispose();
-  // }
   final List<Widget> _pages = [
       const Inicio(),
       
@@ -76,44 +61,10 @@ class _HomePageState extends State<HomePage> {
         ),
         body: _pages[_selectedIndex],
         drawer: const MyDrawer(),
-
-        // body: NestedScrollView(
-        //   headerSliverBuilder: (context, innerBoxIsScrolled) => [
-        //     const MySliverAppBar(
-        //       title: MyTabbedPage() ,
-        //       child: Column(
-        //         mainAxisAlignment: MainAxisAlignment.end,
-        //         children: [
-        //           Divider(
-        //             indent: 25,
-        //             endIndent: 25,
-        //             color: Colors.white,
-        //           ),
-        //           ImgInicio()
-        //         ],
-      
-        //       ),
-              
-        //     ),
-        //   ],
-          
-        //   body: Container(color: Color.fromARGB(255, 154, 234, 144)),
-          
-        // ),
-        
       );
 
   }
 
 }
-
-// class _HomePageState extends State<HomePage> {
-//   @override
-//   Widget build(BuildContext context){
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//     )
-//   }
-// }
 
 

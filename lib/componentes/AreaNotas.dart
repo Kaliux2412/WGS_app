@@ -1,10 +1,14 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/imageset.dart';
 
 import 'NoteDbHelper.dart';
 import 'DescNotas.dart';
+
+//AREA VISUAL DONDE SE GUARDAN LAS NOTAS
+
 
 class NoteHomeUI extends StatefulWidget {
   const NoteHomeUI({super.key});
@@ -47,110 +51,113 @@ class _NoteHomeUIState extends State<NoteHomeUI> {
         child: Column(
           children:[ 
             const SizedBox(height: 10,),
-            Container(
-            height: MediaQuery.of(context).size.height * 0.8,
-            
-            child: FutureBuilder(
-              future: NoteDbHelper.instance.queryAll(),
-              builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snap) {
-                if (snap.hasData) {
-                  return ListView.builder(
-                    itemCount: snap.data!.length,
-                    itemBuilder: (context, index) {
-                      return Dismissible(
-                        key: UniqueKey(),
-                        onDismissed: (direction) {
-                          deletedatabase(snap, index);
-                        },
-                        background: Container(
-                            color: Colors.red, child: const Icon(Icons.delete)),
-                        child: Card(
-                          child: ListTile(
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context) {
-                                  return DescriptionNote(
-                                      tittle: snap.data![index]
-                                          [NoteDbHelper.coltittle],
-                                      description: snap.data![index]
-                                          [NoteDbHelper.coldescription]);
-                                },
-                              ));
-          
-                              //
-                            },
-                            leading: IconButton(
-                                onPressed: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      
-                                      var tittle = '';
-                                      var description = '';
-                                      return AlertDialog(
-                                        title: const Text('Edit Note'),
-                                        content: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            TextField(
-                                              onChanged: (value) {
-                                                tittle = value;
-                                              },
-                                              decoration: InputDecoration(
-                                                  hintText: snap.data![index]
-                                                      [NoteDbHelper.coltittle]),
-                                            ),
-                                            TextField(
+            Expanded(
+              child: Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              
+              child: FutureBuilder(
+                future: NoteDbHelper.instance.queryAll(),
+                builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snap) {
+                  if (snap.hasData) {
+                    return ListView.builder(
+                      itemCount: snap.data!.length,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) {
+                        return Dismissible(
+                          key: UniqueKey(),
+                          onDismissed: (direction) {
+                            deletedatabase(snap, index);
+                          },
+                          background: Container(
+                              color: Colors.red, child: const Icon(Icons.delete)),
+                          child: Card(
+                            child: ListTile(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    return DescriptionNote(
+                                        tittle: snap.data![index]
+                                            [NoteDbHelper.coltittle],
+                                        description: snap.data![index]
+                                            [NoteDbHelper.coldescription]);
+                                  },
+                                ));
+                        
+                                //
+                              },
+                              leading: IconButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        
+                                        var tittle = '';
+                                        var description = '';
+                                        return AlertDialog(
+                                          title: const Text('Edit Note'),
+                                          content: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              TextField(
                                                 onChanged: (value) {
-                                                  description = value;
+                                                  tittle = value;
                                                 },
                                                 decoration: InputDecoration(
-                                                    hintText: snap.data![index][
-                                                        NoteDbHelper
-                                                            .coldescription])),
-
+                                                    hintText: snap.data![index]
+                                                        [NoteDbHelper.coltittle]),
+                                              ),
+                                              TextField(
+                                                  onChanged: (value) {
+                                                    description = value;
+                                                  },
+                                                  decoration: InputDecoration(
+                                                      hintText: snap.data![index][
+                                                          NoteDbHelper
+                                                              .coldescription])),
+              
+                                            ],
+                                          ),
+                                          actions: [
+                                            TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: const Text('Cancel')),
+                                            TextButton(
+                                                onPressed: () {
+                                                  updatedatabase(snap, index,
+                                                      tittle, description);
+                                                  Navigator.pop(context);
+                                                },
+                                                child: const Text('Save'))
                                           ],
-                                        ),
-                                        actions: [
-                                          TextButton(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text('Cancel')),
-                                          TextButton(
-                                              onPressed: () {
-                                                updatedatabase(snap, index,
-                                                    tittle, description);
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text('Save'))
-                                        ],
-                                      );
-                                    },
-                                  );
-                                  //
-                                },
-                                icon: Icon(Icons.edit)),
-                            title:
-                                Text(snap.data![index][NoteDbHelper.coltittle]),
-                            subtitle: Text(
-                                snap.data![index][NoteDbHelper.coldescription]),
-                            trailing: Text(snap.data![index][NoteDbHelper.coldate]
-                                .toString()
-                                .substring(0, 10)),
+                                        );
+                                      },
+                                    );
+                                    //
+                                  },
+                                  icon: Icon(Icons.edit)),
+                              title:
+                                  Text(snap.data![index][NoteDbHelper.coltittle]),
+                              subtitle: Text(
+                                  snap.data![index][NoteDbHelper.coldescription]),
+                              trailing: Text(snap.data![index][NoteDbHelper.coldate]
+                                  .toString()
+                                  .substring(0, 10)),
+                            ),
                           ),
+                        );
+                      },
+                    );
+                  } else {
+                    return Center(
+                        // child: CircularProgressIndicator(),
+                        );
+                  }
+                },
+              ),
                         ),
-                      );
-                    },
-                  );
-                } else {
-                  return Center(
-                      // child: CircularProgressIndicator(),
-                      );
-                }
-              },
             ),
-          ),
         ]),
       ),
       floatingActionButton: FloatingActionButton(

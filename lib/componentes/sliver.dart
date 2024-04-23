@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+// AREA DE MENU DE LA IZQUIERDA SUPERIOR, QUE SE DESPLIEGA
+
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
   final Widget title;

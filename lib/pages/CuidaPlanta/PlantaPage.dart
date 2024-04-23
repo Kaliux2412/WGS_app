@@ -6,6 +6,8 @@ import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/CuidaPlanta/widgets.dart';
 
 import 'DatosPlanta.dart';
+
+// AREA QUE REVISA LOS PERMISOS PARA MANDAR NOTIFICACIONES Y COMO FUNCIONARA SI SI SE PERMITEN.
 class PlantaPage extends StatefulWidget {
   const PlantaPage({Key? key}) : super(key: key);
 
@@ -14,6 +16,9 @@ class PlantaPage extends StatefulWidget {
 }
 
 class _PlantaPageState extends State<PlantaPage> {
+   DateTime _selectedDate = DateTime.now();
+
+  TimeOfDay _selectedTime = TimeOfDay.now();
   @override
   void initState(){
     super.initState();
@@ -52,9 +57,6 @@ class _PlantaPageState extends State<PlantaPage> {
       }
     });
 
-    // AwesomeNotifications().createdStream.listen((event){
-    //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('NotificationCreated on ${notification.channelKey}')))
-    // }));
   }
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,21 +77,124 @@ class _PlantaPageState extends State<PlantaPage> {
           children: [
             PlantImage(),
             SizedBox(height: 25,),
-            // FloatingActionButton(onPressed: createPlantComidaNotificacion, child: Text('Food'),),
-            // FloatingActionButton(onPressed: () async{
-            //   NotificationWeekAndTime? pickedSchedule = 
-            //   await pickSchedule(context);
-            //   if(pickedSchedule != null){
-            //     createWaterReminderNotification(pickedSchedule);
-            //   }
-            // }, child: Text('Water'),),
-            // FloatingActionButton(onPressed: cancelScheduledNotifications, child: Text('Cancel'),),
+
+                      Expanded(
+
+            child: Column(
+
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: [
+
+                Text('Selecciona la fecha y hora para la notificación de riego:'),
+
+                SizedBox(height: 16),
+
+                Row(
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+
+                    ElevatedButton(
+
+                      onPressed: () async {
+
+                        final DateTime? pickedDate = await showDatePicker(
+
+                          context: context,
+
+                          initialDate: _selectedDate,
+
+                          firstDate: DateTime.now(),
+
+                          lastDate: DateTime(DateTime.now().year + 1),
+
+                        );
+
+                        if (pickedDate != null) {
+
+                          setState(() {
+
+                            _selectedDate = pickedDate;
+
+                          });
+
+                        }
+
+                      },
+
+                      child: Text('Fecha'),
+
+                    ),
+
+                    SizedBox(width: 16),
+
+                    ElevatedButton(
+
+                      onPressed: () async {
+
+                        final TimeOfDay? pickedTime = await showTimePicker(
+
+                          context: context,
+
+                          initialTime: _selectedTime,
+
+                        );
+
+                        if (pickedTime != null) {
+
+                          setState(() {
+
+                            _selectedTime = pickedTime;
+
+                          });
+
+                        }
+
+                      },
+
+                      child: Text('Hora'),
+
+                    ),
+
+                  ],
+
+                ),
+
+              ],
+
+            ),
+
+          ),
+
+          ElevatedButton(
+
+            onPressed: () {
+
+              final NotificationWeekAndTime notificationSchedule = NotificationWeekAndTime(
+
+                dayOfTheWeek: _selectedDate.weekday,
+
+                timeOfDay: _selectedTime,
+
+              );
+
+createWaterReminderNotification(notificationSchedule);
+
+              Navigator.pop(context);
+
+            },
+
+            child: Text('Guardar'),
+
+          ),
 
             HomePageButtons(
               onPressedOne: createPlantComidaNotificacion,
               onPressedTwo: () async{
                 NotificationWeekAndTime? pickedShedule = 
-                await pickSchedule(context);
+                  await pickSchedule(context);
                 if(pickedShedule != null){
                   createWaterReminderNotification(pickedShedule);
                 }

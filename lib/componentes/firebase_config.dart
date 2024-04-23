@@ -4,6 +4,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 
 class FirebaseConfig {
+
+  /// CONFIGURACIONES REQUERIDAS PARA USAR LA BASE DE DATOS FIREBASE
+  /// 
     static Future<FirebaseApp> initialize() async {
 
     FirebaseApp app = await Firebase.initializeApp();
@@ -35,45 +38,4 @@ class FirebaseConfig {
     }
   }
 }
-// Import the functions you need from the SDKs you need
-
-// import { initializeApp } from "firebase/app";
-
-// import { getAnalytics } from "firebase/analytics";
-
-// // TODO: Add SDKs for Firebase products that you want to use
-
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-
-// // Your web app's Firebase configuration
-
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-// const firebaseConfig = {
-
-//   apiKey: "AIzaSyDIs01gT1MvkNOGuA4Cv_jA7SJQtjEqVhw",
-
-//   authDomain: "flutter-app-b3daf.firebaseapp.com",
-
-//   projectId: "flutter-app-b3daf",
-
-//   storageBucket: "flutter-app-b3daf.appspot.com",
-
-//   messagingSenderId: "73844772548",
-
-//   appId: "1:73844772548:web:10bb15c8b1c590fd3a0391",
-
-//   measurementId: "G-TKFPNZ31F5"
-
-// };
-
-
-// // Initialize Firebase
-
-// const app = initializeApp(firebaseConfig);
-
-// const analytics = getAnalytics(app);
-
-
 

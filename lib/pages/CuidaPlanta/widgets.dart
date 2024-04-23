@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+//AREA QUE ESPECIFICA LA FUNCIONALIDAD DE CUENTA, QUE AYUDA EN LAS WIDGETS QUE SE USARAN PARA MEJORAR LA EXPERIENCIA
+
+
 class AppBarTitle extends StatelessWidget {
   const AppBarTitle({Key?key}):super(key: key);
 
@@ -75,6 +78,7 @@ class HomePageButtons extends StatelessWidget {
                     'Plant Food',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white
                     ),
                   )
                 ],
@@ -109,6 +113,7 @@ class HomePageButtons extends StatelessWidget {
                     'Water',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white
                     ),
                   )
                 ],
@@ -143,6 +148,7 @@ class HomePageButtons extends StatelessWidget {
                     'Cancel',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white
                     ),
                   )
                 ],

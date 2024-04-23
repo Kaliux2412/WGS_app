@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// AREA QUE PROGRAMARA LAS NOTIFICACIONES QUE ARROJARA LA SECCIÓN DE CUENTA, PARA CUIDAR LA PLANTA
+
 int createUniqueId(){
   return DateTime.now().microsecondsSinceEpoch.remainder(100000);
 }

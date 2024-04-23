@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/componentes/buscar_plantas.dart';
 import 'package:flutter_application_1/componentes/modelos/plantas.dart';
 import 'package:provider/provider.dart';
-// import 'package:flutter_application_1/componentes/sliver.dart';
 
 import '../componentes/Products.dart';
+import '../componentes/modelos/buscar_p.dart';
 import '../componentes/modelos/tipos.dart';
 
 class Inicio extends StatefulWidget {
@@ -27,28 +28,44 @@ class _InicioState extends State<Inicio> {
    ),
   );
 }
+// ÁREA DE BUSCADOR:
   
   @override
   Widget build(BuildContext context) {
+        final List<Country> countries = [
+          const Country('United States of America'),
+          const Country('Ecuador'),
+          const Country('México'),
+          const Country('Venezuela'),
+          const Country('Francia'),
+          const Country('Colombia'),
+          const Country('Panamá'),
+          const Country('Alemania'),
+          const Country('España'),
+          const Country('Cuba'),
+        ];
     return  Consumer<Tipos>(builder: (context, value, child) =>
       Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            margin: const EdgeInsets.symmetric(horizontal: 25),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 186, 234, 178),
-              borderRadius: BorderRadius.circular(8)
-            ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Buscar', style: TextStyle(color: Colors.grey),),
-                Icon(Icons.search, color:  Color.fromARGB(255, 41, 136, 24)
-              ),],
+          ListTile(
+            iconColor: Colors.teal,
+            onTap: (){
+              showSearch(context: context, delegate: SearchCountryDelegate(countries));
+            },
+            title: Container(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 83, 190, 98),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text(
+                'Buscar: ',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
+//IMG
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 25.0),
             child: Text('WGS te ayudará a tener el control y cuidado de tus plantas', style: TextStyle(color: Colors.grey),),
@@ -64,12 +81,6 @@ class _InicioState extends State<Inicio> {
               ),
             )
           ),
-          // Container(
-          //   child: Expanded(
-
-          //     child: SingleChildScrollView(
-          //         scrollDirection: Axis.vertical,
-
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.0),
                   child: Row(
@@ -89,11 +100,12 @@ class _InicioState extends State<Inicio> {
                 ),
               
             
-          
+        // AREA QUE ESPECIFICA EL CUIDADO DE LA PLANTA
+        
           const SizedBox(height: 6,),
           Expanded(
             child: ListView.builder(
-              itemCount: 4,
+              itemCount: 8,
               shrinkWrap: true,
               physics:AlwaysScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,

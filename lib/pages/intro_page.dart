@@ -1,4 +1,6 @@
 
+
+// ESTA ES EL ÁREA DE INICIO DE LA APP, EL LOGO, BIENVENIDA Y EL NOMBRE DE LA EMPRESA
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';

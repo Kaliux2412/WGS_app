@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'widgets.dart';
 
+//AREA QUE UN FUTURO DARA LOS DATOS DE LA PLANTA
+
 class DatosPlanta extends StatelessWidget{
   const DatosPlanta({Key? key}):super(key: key);
 
