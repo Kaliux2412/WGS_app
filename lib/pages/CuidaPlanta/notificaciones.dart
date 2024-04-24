@@ -19,11 +19,12 @@ Future<void> createPlantComidaNotificacion() async {
   );
 }
 Future<void> createWaterReminderNotification(
+  
    NotificationWeekAndTime notificationSchedule) async {
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
       id: createUniqueId(),
-      channelKey: 'sheduled_channel',
+      channelKey: 'scheduled_channel',
       title: '${Emojis.wheater_droplet} Riega Tu Planta!',
       body: 'Riega tu planta regularmete para tener resultados increíbles.',
       notificationLayout: NotificationLayout.Default,

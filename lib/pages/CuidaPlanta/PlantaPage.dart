@@ -78,30 +78,20 @@ class _PlantaPageState extends State<PlantaPage> {
             PlantImage(),
             SizedBox(height: 25,),
 
-                      Expanded(
-
+            Expanded(
             child: Column(
-
               mainAxisAlignment: MainAxisAlignment.center,
-
               children: [
-
                 Text('Selecciona la fecha y hora para la notificación de riego:'),
 
                 SizedBox(height: 16),
 
                 Row(
-
                   mainAxisAlignment: MainAxisAlignment.center,
-
                   children: [
-
                     ElevatedButton(
-
                       onPressed: () async {
-
                         final DateTime? pickedDate = await showDatePicker(
-
                           context: context,
 
                           initialDate: _selectedDate,
@@ -180,7 +170,7 @@ class _PlantaPageState extends State<PlantaPage> {
 
               );
 
-createWaterReminderNotification(notificationSchedule);
+              createWaterReminderNotification(notificationSchedule);
 
               Navigator.pop(context);
 

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/CuidaPlanta/PlantaPage.dart';
 
 
-//AREA PARA INICIALIZAR LAS NOTIFICACIONES
+//AREA PARA INICIAZILAR  NOTIFICACIONES
 void main() {
-  AwesomeNotifications().initialize('resource://drawable/ic_icon',
+  AwesomeNotifications().initialize(null,
   [
     NotificationChannel(
       channelKey: 'basic_channel', 
@@ -19,12 +19,12 @@ void main() {
     ),
     
     NotificationChannel(
-      channelKey: 'sheduled_channel',
+      channelKey: 'scheduled_channel',
       channelName: 'Sheduled Notifications',
       defaultColor: Colors.teal,
       locked:true,
       importance: NotificationImportance.High,
-      soundSource: 'resource://raw/sonido_notificacion',
+      // soundSource: 'resource://raw/sonido_notificacion',
       channelDescription: 'FLutterApp',
       enableVibration: true,
     )

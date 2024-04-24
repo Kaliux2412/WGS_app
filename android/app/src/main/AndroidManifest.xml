@@ -44,6 +44,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <uses-permission android:name="android.permission.VIBRATE"/> 
+        <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> 
         <!-- <service android:name="me.carda.awesome_notifications.core.services.ForegroundService"
 
           android:enabled="true"
@@ -77,9 +80,7 @@
             android:name="firebase_storage_bucket"
             android:value="gs://flutter_application_1.appspot.com" /> -->
     </application>
-    <!-- <uses-permission android:name="android.permission.VIBRATE"/>
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> -->
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility?hl=en and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
