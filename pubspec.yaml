@@ -42,9 +42,9 @@ dependencies:
 
   velocity_x: ^4.1.2
   flutter_dotenv: ^5.1.0
-  chat_gpt_sdk:
-    git: 
-      url: https://github.com/iampawan/Flutter-ChatGPT.git
+  chat_gpt_sdk: ^2.2.5
+    # git: 
+    #   url: https://github.com/iampawan/Flutter-ChatGPT.git
   dash_chat_2: ^0.0.20
   http: ^1.2.1
   path_provider: ^2.1.3

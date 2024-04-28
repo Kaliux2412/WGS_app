@@ -1,90 +1,128 @@
-
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:flutter_application_1/componentes/.env';
 
 import 'chatmessage.dart';
 
-// AREA FALLIDA PARA EL CHAT DE USUARIO
 
-class ChatScreenState extends StatefulWidget {
-  const ChatScreenState({super.key});
+class ChatPage extends StatefulWidget {
 
   @override
-  State<ChatScreenState> createState() => _ChatScreenStateState();
+
+  _ChatPageState createState() => _ChatPageState();
+
 }
 
-class _ChatScreenStateState extends State<ChatScreenState> {
 
-  final TextEditingController _controller = TextEditingController();
-  final List<ChatMessage> _messages = [];
-  // OpenAI? chatGPT;
-  // StreamSubscription? _subscription;
-  bool _isTyping = false;
+class _ChatPageState extends State<ChatPage> {
+
+  final OpenAIApi _openAI = OpenAIApi(apiKey: OPENAI_API_KEY);
+
+  final TextEditingController _promptController = TextEditingController();
+
+  final List<String> _messages = [];
+
+
+  void _sendMessage() async {
+
+    final prompt = _promptController.text;
+
+    if (prompt.isNotEmpty) {
+
+      try {
+
+        final response = await _openAI.generateResponse(prompt);
+
+        setState(() {
+
+          _messages.insert(0, response);
+
+        });
+
+      } catch (e) {
+
+        print(e);
+
+      }
+
+      _promptController.clear();
+
+    }
+
+  }
+
 
   @override
-  void initState(){
-    super.initState();
 
-  }
-  @override
-  void dispose(){
-    super.dispose();
-  }
-
-  void _sendMessage() {
-
-    ChatMessage message = ChatMessage(text: _controller.text, sender: "Usuario WGS");
-    setState(() {
-      _messages.insert(0, message);
-      _isTyping = true;
-    });
-    _controller.clear();
-    
-  }
-
-  Widget _buildTextComposer(){
-    return  Row(
-      children: [
-        Expanded(
-          child: TextField(
-            controller: _controller,
-            onSubmitted: (value) => _sendMessage(),
-            decoration: InputDecoration.collapsed(hintText: "Manda un mensaje"),
-          ),
-        ),
-        IconButton(
-          icon: const Icon(Icons.send),
-          onPressed:() => _sendMessage(),
-        )
-    ],).px16();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text("Pregunta a WGS Assistant", style: TextStyle(color: Colors.white),),
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Flexible(
-              child: ListView.builder(
-                reverse: true,
-                padding: Vx.m8,
-                itemCount: _messages.length,
-                itemBuilder: (context, index) {
-                  return _messages[index];
-                }
-              )
-            ),
-        ],),
-      ),
-    );
-  }
-}
 
+    return Scaffold(
+
+      appBar: AppBar(title: Text('ChatGPT')),
+
+      body: Column(
+
+        children: [
+
+          Expanded(
+
+            child: ListView.builder(
+
+              itemCount: _messages.length,
+
+              itemBuilder: (context, index) {
+
+                return ListTile(
+
+                  title: Text(_messages[index]),
+
+                );
+
+              },
+
+            ),
+
+          ),
+
+          Container(
+
+            padding: EdgeInsets.symmetric(horizontal: 16),
+
+            child: Row(
+
+              children: [
+
+                Expanded(
+
+                  child: TextField(
+
+                    controller: _promptController,
+
+                    decoration: InputDecoration(hintText: 'Type a message'),
+
+                  ),
+
+                ),
+
+                IconButton(
+
+                  icon: Icon(Icons.send),
+
+                  onPressed: _sendMessage,
+
+                ),
+
+              ],
+
+            ),
+
+          ),
+
+        ],
+
+      ),
+
+    );
+
+  }
+
+}

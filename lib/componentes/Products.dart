@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/componentes/modelos/plantas.dart';
 
 
-// ESTA SECCIÓN CONFIGURA EL DISEÑO DE COMO SE VERAN LAS TARJETAS DE PRODUCTOS (PLANTAS)
+// ESTA SECCIÓN CONFIGURA EL DISEÑO DE COMO SE VERAN LAS TARJETAS DE PRODUCTOS (PLANTAS)-----
 
 // ignore: must_be_immutable
 class Products extends StatelessWidget {

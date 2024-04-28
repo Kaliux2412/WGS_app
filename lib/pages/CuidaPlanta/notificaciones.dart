@@ -1,5 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter_application_1/pages/CuidaPlanta/utilities.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 //PROGRAMA QUE ACCEDE Y CONFIGURA EL CONTENIDO DE LAS NOTIFICACIONES
 

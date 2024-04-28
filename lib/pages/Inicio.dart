@@ -33,16 +33,16 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
         final List<Country> countries = [
-          const Country('United States of America'),
-          const Country('Ecuador'),
-          const Country('México'),
-          const Country('Venezuela'),
-          const Country('Francia'),
-          const Country('Colombia'),
-          const Country('Panamá'),
-          const Country('Alemania'),
-          const Country('España'),
-          const Country('Cuba'),
+          const Country('Tomate'),
+          const Country('Limón'),
+          const Country('Nopal'),
+          const Country('Fresa'),
+          const Country('Pimiento'),
+          const Country('Huerto'),
+          const Country('Lechuga'),
+          const Country('Naranja'),
+          const Country('Arandano'),
+          const Country('Mango'),
         ];
     return  Consumer<Tipos>(builder: (context, value, child) =>
       Column(

@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import "package:flutter_local_notifications/flutter_local_notifications.dart";
 import 'package:flutter_application_1/pages/CuidaPlanta/PlantaPage.dart';
 
 
 //AREA PARA INICIAZILAR  NOTIFICACIONES
+
 void main() {
   AwesomeNotifications().initialize(null,
   [
@@ -18,17 +20,8 @@ void main() {
       channelDescription: "Recibe notificaciones básicas de la aplicación."      
     ),
     
-    NotificationChannel(
-      channelKey: 'scheduled_channel',
-      channelName: 'Sheduled Notifications',
-      defaultColor: Colors.teal,
-      locked:true,
-      importance: NotificationImportance.High,
-      // soundSource: 'resource://raw/sonido_notificacion',
-      channelDescription: 'FLutterApp',
-      enableVibration: true,
-    )
   ], debug: true);
+  
   runApp(AppWidget());
 }
 

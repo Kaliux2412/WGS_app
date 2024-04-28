@@ -1,35 +1,64 @@
-import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'dart:convert';
 
-class ChatMessage extends StatelessWidget {
-  const ChatMessage(
-      {super.key,
-      required this.text,
-      required this.sender,
-      });
+import 'package:http/http.dart' as http;
 
-  final String text;
-  final String sender;
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(sender)
-            .text
-            .subtitle1(context)
-            .make()
-            .box
-            .color(sender == "user" ? Vx.red200 : Vx.green200)
-            .p16
-            .rounded
-            .alignCenter
-            .makeCentered(),
-        Expanded(
-          child: text.trim().text.bodyText1(context).make().px8(),
-        ),
+class OpenAIApi {
+
+  final String apiKey;
+
+  final String baseUrl = 'https://api.openai.com/v1';
+
+
+  OpenAIApi({required this.apiKey});
+
+
+  Future<String> generateResponse(String prompt) async {
+
+    final request = http.Request('POST', Uri.parse('$baseUrl/chat/completions'));
+
+    request.headers['Content-Type'] = 'application/json';
+
+    request.headers['Authorization'] = 'Bearer $apiKey';
+
+
+    final jsonBody = json.encode({
+
+      "model": "gpt-3.5-turbo-0301",
+
+      "messages": [
+
+        {"role": "system", "content": "You are a helpful assistant."},
+
+        {"role": "user", "content": prompt},
+
       ],
-    ).py8();
+
+      "max_tokens": 200,
+
+    });
+
+
+    request.body = jsonBody;
+
+
+    http.StreamedResponse response = await request.send();
+
+
+    if (response.statusCode == 200) {
+
+      final responseString = await response.stream.transform(utf8.decoder).join();
+
+      final responseData = json.decode(responseString);
+
+      return responseData['choices'][0]['message']['content'];
+
+    } else {
+
+      throw Exception('Failed to load data: ${response.reasonPhrase}');
+
+    }
+
   }
+
 }
