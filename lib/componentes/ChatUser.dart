@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/componentes/.env';
 
 import 'chatmessage.dart';
-
+  const keyO = "1";
 
 class ChatPage extends StatefulWidget {
 
@@ -14,8 +14,7 @@ class ChatPage extends StatefulWidget {
 
 
 class _ChatPageState extends State<ChatPage> {
-
-  final OpenAIApi _openAI = OpenAIApi(apiKey: OPENAI_API_KEY);
+  final OpenAIApi _openAI = OpenAIApi(apiKey: keyO);
 
   final TextEditingController _promptController = TextEditingController();
 

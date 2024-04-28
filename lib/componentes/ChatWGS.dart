@@ -12,7 +12,7 @@ class ChatWGS extends StatefulWidget {
 
 class _ChatWGSState extends State<ChatWGS> {
   final _openAI = OpenAI.instance.build(
-    token: OPENAI_API_KEY, 
+    token: "1", 
     baseOption: HttpSetup(
       receiveTimeout: const Duration(seconds: 5)), );
   final ChatUser _currentUser = 
